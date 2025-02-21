@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Workouts</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #2a2d3a;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .tabs {
+            width: 60%;
+            margin: 0 auto;
+            background: #3a3f54;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .tabs ul {
+            background: #444a63;
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        .tabs li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        .tabs a {
+            color: #f5a623;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        .tabs a:hover {
+            background: #f5a623;
+            color: #3a3f54;
+        }
+
+        .accordion h3 {
+            background: #f5a623;
+            color: #252a3b;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .accordion div {
+            background: #444a63;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .workout-title {
+            color: cyan;
+        }
+
+        .workout-card {
+            border-radius: 10px;
+            padding: 20px;
+            background: #3a3f54;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 250px;
+            border-radius: 5px;
+        }
+
+        .nutrition-list {
+            text-align: left;
+            margin-top: 10px;
+            color: white;
+            font-size: 18px;
+        }
+
+        .meal {
+            font-weight: bold;
+            color: #f5a623;
+        }
+
+        .meal img {
+            display: block;
+            width: 1px;
+            height: 1px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        #breakfast{
+            height: 100px;
+            width: 100px;
+        }
+        #lunch{
+            height: 100px;
+            width: 100px;
+        }
+        #dinner{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fitness Tracker - Men's Workouts</h1>
+
+    <div class="tabs">
+        <ul>
+            <li><a href="#workouts">Workouts</a></li>
+            <li><a href="#nutrition">Nutrition</a></li>
+        </ul>
+
+        <div id="workouts">
+            <h2 class="workout-title">Men's Go-To Workouts</h2> 
+            <div class="accordion">
+                <h3>Push-Ups</h3>
+                <div class="workout-card">
+                    <p><strong>Description:</strong> A great upper body workout targeting the chest, shoulders, and triceps.</p>
+                    <p>1. Get into a plank position with hands slightly wider than shoulder-width.</p>
+                    <p>2. Lower your body until your chest nearly touches the ground.</p>
+                    <p>3. Push back up to the starting position.</p>
+                    <iframe src="https://www.youtube.com/embed/IODxDxX7oi4" allowfullscreen></iframe>
+                </div>
+
+                <h3>Squats</h3>
+                <div class="workout-card">
+                    <p><strong>Description:</strong> A lower body exercise that targets the quadriceps, hamstrings, and glutes.</p>
+                    <p>1. Stand with feet shoulder-width apart.</p>
+                    <p>2. Lower your hips as if sitting in a chair.</p>
+                    <p>3. Return to standing position.</p>
+                    <iframe src="https://www.youtube.com/embed/aclHkVaku9U" allowfullscreen></iframe>
+                </div>
+
+                <h3>Plank</h3>
+                <div class="workout-card">
+                    <p><strong>Description:</strong> A core stability exercise that strengthens the abs, back, and shoulders.</p>
+                    <p>1. Get into a push-up position but rest on your forearms.</p>
+                    <p>2. Keep your body in a straight line from head to heels.</p>
+                    <p>3. Hold the position as long as possible.</p>
+                    <iframe src="https://www.youtube.com/embed/B296mZDhrP4" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <div id="nutrition">
+            <h2 style="color: cyan;">Nutrition Guide</h2>
+            <ul class="nutrition-list">
+                <li>
+                    <span class="meal">Breakfast:</span> Oatmeal with Banana & Nuts - 
+                    <em>Rich in fiber and energy-boosting carbs.</em><br>
+                    <img src="breakfast.jpg" alt="Oatmeal with Banana & Nuts"id="breakfast">
+                </li><br>
+                <li>
+                    <span class="meal">Lunch:</span> Grilled Chicken Salad - 
+                    <em>High in protein and packed with vitamins.</em><br>
+                    <img src="lunch.jpg" alt="Grilled Chicken Salad"id="lunch">
+                </li><br>
+                <li>
+                    <span class="meal">Dinner:</span> Salmon with Quinoa - 
+                    <em>Great source of Omega-3 and essential amino acids.</em><br>
+                    <img src="dinner.jpg" alt="Salmon with Quinoa" id="dinner">
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".tabs").tabs();
+            $(".accordion").accordion({
+                heightStyle: "content",
+                collapsible: true,
+                active: false
+            });
+        });
+    </script>
+
+</body>
+</html>
